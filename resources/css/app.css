@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    @font-face {
+        font-family: inter;
+        font-weight: 700;
+        src: url(/public/fonts/Inter-Bold.ttf) format("woff");
+    }
+    @font-face {
+        font-family: inter;
+        font-weight: 400;
+        src: url(/public/fonts/Inter-Regular.ttf) format("woff");
+    }
+    @font-face {
+        font-family: inter;
+        font-weight: 400;
+        src: url(/public/fonts/Inter-Regular.ttf) format("woff");
+    }
+    @font-face {
+        font-family: inter;
+        font-weight: 600;
+        src: url(/public/fonts/Inter-SemiBold.ttf) format("woff");
+    }
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+@keyframes moveShape {
+    0% {
+        transform: translateY(-20px) translateX(-20px);
+    }
+    25% {
+        transform: translateY(20px) translateX(20px);
+    }
+    50% {
+        transform: translateY(-20px) translateX(-20px);
+    }
+    75% {
+        transform: translateY(20px) translateX(20px);
+    }
+    100% {
+        transform: translateY(-20px) translateX(-20px);
+    }
+}
+
+.background-shapes {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.triangle,
+.circle {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 5%;
+    background: linear-gradient(to bottom right, #FF00FF, #00FFFF);
+    position: absolute;
+    opacity: 0.3;
+    border: 2px solid white;
+}
+
+.triangle-2,
+.circle-2 {
+    width: 120px;
+    height: 120px;
+    bottom: 20%;
+    right: 5%;
+    background: linear-gradient(to bottom right, #FF00FF, #00FFFF);
+    position: absolute;
+    opacity: 0.3;
+    border: 2px solid white;
+}
+
+.triangle,
+.triangle-2 {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: moveShape 10s infinite alternate;
+    /* Mengubah arah gerakan ke atas dan bawah */
+}
+
+.circle,
+.circle-2 {
+    border-radius: 50%;
+    animation: moveShape 7s infinite alternate;
+    /* Mengubah arah gerakan ke atas dan bawah */
+}
+
+@media (max-width: 767px) {
+    .triangle,
+    .triangle-2,
+    .circle,
+    .circle-2 {
+        display: none;
+    }
+}
+
+@media (max-width: 1028px) {
+    .triangle,
+    .triangle-2,
+    .circle,
+    .circle-2 {
+        display: none;
+    }
+}
+
+.home-circle1,
+.home-circle2 {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    left: 25%;
+    background: linear-gradient(to bottom right, #FF00FF, #00FFFF);
+    position: absolute;
+    opacity: 0.3;
+    border: 2px solid white;
+}
+
+@media (max-width: 767px) {
+    .home-circle1,
+    .home-circle2 {
+        display: none;
+    }
+}
+
+@media (max-width: 1028px) {
+    .home-circle1,
+    .home-circle2 {
+        width: 100px;
+        height: 100px;
+        top: 60%;
+        left: 50%;
+        background: linear-gradient(to bottom right, #FF00FF, #00FFFF);
+        position: absolute;
+        opacity: 0.3;
+        border: 2px solid white;
+    }
+}
+
+.home-circle1 {
+    border-radius: 50%;
+    animation: moveShape 10s infinite alternate;
+    /* Mengubah arah gerakan ke atas dan bawah */
+}
+
+.home-circle2 {
+    border-radius: 50%;
+    animation: moveShape 7s infinite alternate;
+    /* Mengubah arah gerakan ke atas dan bawah */
+}
